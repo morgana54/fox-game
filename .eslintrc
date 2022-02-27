@@ -3,7 +3,8 @@
     "eslint:recommended",
     "plugin:import/errors",
     "prettier",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/typescript"
   ],
   "rules": {
     "no-console": 1
