@@ -1,3 +1,4 @@
+import { ICONS } from "./constants";
 const gameState = {
   current: "INIT",
   clock: 1,
@@ -5,6 +6,9 @@ const gameState = {
     this.clock++;
     console.log(this.clock);
     return this.clock;
+  },
+  handleUserAction(icon: typeof ICONS) {
+    console.log(icon);
   },
 };
 
