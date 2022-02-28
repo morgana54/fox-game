@@ -1,11 +1,11 @@
-import { ICONS } from "./constants";
+import { Icon, ICONS } from "./constants";
 
 const toggleHighlighted = (iconIndex: number, show: boolean) =>
   document
     .querySelector(`.${ICONS[iconIndex]}-icon`)
     ?.classList.toggle("highlighted", show);
 
-export const initButtons = (handleUserAction: (icon: typeof ICONS) => void) => {
+export const initButtons = (handleUserAction: (icon: Icon) => void) => {
   let selectedIconIndex = 0;
 
   const buttonClick = ({ target }: Event) => {
@@ -21,7 +21,7 @@ export const initButtons = (handleUserAction: (icon: typeof ICONS) => void) => {
       selectedIconIndex = (1 + selectedIconIndex) % ICONS.length;
       toggleHighlighted(selectedIconIndex, true);
     } else {
-      handleUserAction(ICONS[selectedIconIndex] as unknown as typeof ICONS);
+      handleUserAction(ICONS[selectedIconIndex]);
     }
   };
 
